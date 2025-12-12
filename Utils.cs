@@ -9,7 +9,7 @@
 
             if (string.IsNullOrWhiteSpace(text))
             {
-                WriteColored("\n⚠️ Input cannot be empty!", ConsoleColor.Red);
+                WriteColored("\n ⚠️ Input cannot be empty!", ConsoleColor.Red);
                 continue;
             }
 
@@ -23,7 +23,7 @@
                     }
                     else
                     {
-                        WriteColored($"\n⚠️ Please enter a valid {typeof(T).Name} value!", ConsoleColor.Red);
+                        WriteColored($"\n ⚠️ Please enter a valid {typeof(T).Name} value!", ConsoleColor.Red);
                         continue;
                     }
                 }
@@ -34,15 +34,15 @@
             }
             catch (FormatException)
             {
-                WriteColored($"\n⚠️ Please enter a valid {typeof(T).Name} value!", ConsoleColor.Red);
+                WriteColored($"\n ⚠️ Please enter a valid {typeof(T).Name} value!", ConsoleColor.Red);
             }
             catch (OverflowException)
             {
-                WriteColored($"\n⚠️ The entered value is too large or too small for {typeof(T).Name}!", ConsoleColor.Red);
+                WriteColored($"\n ⚠️ The entered value is too large or too small for {typeof(T).Name}!", ConsoleColor.Red);
             }
             catch (Exception exc)
             {
-                WriteColored($"\n⚠️ An unexpected error occurred: {exc.Message}", ConsoleColor.Red);
+                WriteColored($"\n ⚠️ An unexpected error occurred: {exc.Message}", ConsoleColor.Red);
             }
         }
     }
@@ -58,7 +58,7 @@
     public static void WaitingScreen(ConsoleColor color = ConsoleColor.DarkYellow)
     {
         Console.CursorVisible = false;
-        WriteColored("\n⏳ Press any key to continue ...", color);
+        WriteColored("\n ⏳ Press any key to continue ...", color);
         Console.ReadKey(intercept: true);
         Console.CursorVisible = true;
     }

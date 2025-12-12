@@ -1,4 +1,4 @@
-﻿public enum OperationType
+﻿public enum SymbolsOfElementary
 {
     Addition,
     Subtraction,
@@ -8,26 +8,33 @@
 
 class Elementary
 {
-    public static double? BasicOperation(OperationType operationType, Func<double, double, double> operation)
+    /// <summary>
+    /// Performs a basic arithmetic operation on two user-provided numbers using the specified operation type and
+    /// delegate.
+    /// </summary>
+    /// <remarks>This method prompts the user to enter two numbers and applies the specified operation. For
+    /// division, it checks for division by zero and returns <see langword="null"/> if the operation is invalid. Any
+    /// errors encountered during input or calculation are reported, and <see langword="null"/> is returned.</remarks>
+    /// <param name="operationType">The type of arithmetic operation to perform. Determines the operation's symbol and may affect input validation
+    /// (for example, division checks for zero divisors).</param>
+    /// <param name="operation">A delegate that defines the operation to apply to the two input numbers. The delegate should accept two <see
+    /// cref="double"/> values and return the result as a <see cref="double"/>.</param>
+    /// <returns>The result of the operation as a <see cref="double"/> if successful; otherwise, <see langword="null"/> if an
+    /// error occurs or the operation is undefined (such as division by zero).</returns>
+    public static double? BasicOperation(SymbolsOfElementary operationType, Func<double, double, double> operation)
     {
         try
         {
-            double val1 = Utils.GetInput<double>("\n➡️ Enter the first number: ");
-            double val2 = Utils.GetInput<double>("➡️ Enter the second number: ");
+            double val1 = Utils.GetInput<double>("\n ➡️ Enter the first number: ");
+            double val2 = Utils.GetInput<double>(" ➡️ Enter the second number: ");
 
-            if (operationType == OperationType.Division)
+            if (operationType == SymbolsOfElementary.Division)
             {
                 if (val1 == 0 && val2 == 0)
-                {
-                    Utils.WriteColored("\n⛔ Undefined!", ConsoleColor.Red);
-                    return double.NaN;
-                }
+                    throw new Exception("Undefined!");
 
                 if (val2 == 0)
-                {
-                    Utils.WriteColored("\n⛔ The divisor cannot be 0!", ConsoleColor.Red);
-                    return double.NaN;
-                }
+                    throw new Exception("The divisor cannot be 0!");
             }
 
             double result = operation(val1, val2);
@@ -36,23 +43,25 @@ class Elementary
         }
         catch (Exception ex)
         {
-            Utils.WriteColored($"\n⛔ An error has occurred: {ex.Message}", ConsoleColor.Red);
+            Utils.WriteColored($"\n ⛔ An error has occurred in basic operation => {ex.Message}", ConsoleColor.Red);
             return null;
         }
     }
 
-    public static double ShowResult(double result, double val1, double val2, OperationType operationType)
+
+    public static double ShowResult(double result, double val1, double val2, SymbolsOfElementary operationType)
     {
         string symbol = operationType switch
         {
-            OperationType.Addition => "+",
-            OperationType.Subtraction => "-",
-            OperationType.Multiplication => "*",
-            OperationType.Division => "/",
+            SymbolsOfElementary.Addition => "+",
+            SymbolsOfElementary.Subtraction => "-",
+            SymbolsOfElementary.Multiplication => "*",
+            SymbolsOfElementary.Division => "/",
             _ => "?"
         };
 
-        Utils.WriteColored($"\n✅ {val1} {symbol} {val2} = {result}", ConsoleColor.Green);
+        Utils.WriteColored($"\n ✅ {val1} {symbol} {val2} = {result}", ConsoleColor.Green);
         return result;
     }
+
 }
