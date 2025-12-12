@@ -21,15 +21,35 @@
             ( "\n 📐 Trigonometric & Logarithmic Functions", ConsoleColor.DarkYellow),
             ( $" {new string('-',40)}",ConsoleColor.White),
             ( " 9. Trigonometric Functions", ConsoleColor.DarkYellow),
-            ( " 10. Logarithmic Functions", ConsoleColor.Yellow),
+            ( "10. Logarithmic Functions", ConsoleColor.Yellow),
 
             ( "\n 💾 Memory & Exit Operations", ConsoleColor.DarkRed),
             ( $" {new string('-',40)}",ConsoleColor.White),
-            ( " 11. Memory Operations", ConsoleColor.DarkRed),
-            ( " 12. Exit", ConsoleColor.Red),
+            ( "11. Memory Operations", ConsoleColor.DarkRed),
+            ( "12. Exit", ConsoleColor.Red),
         };
 
         foreach (var item in mainMenuItems)
+        {
+            Utils.WriteColored(item.text, item.Color);
+        }
+    }
+
+    public static void TrigonometryMenu()
+    {
+        var trigonometryMenuItems = new (string text, ConsoleColor Color)[]
+        {
+             ( " 🧮 Trigonometric Operations", ConsoleColor.Magenta),
+             ( $" {new string('-',40)}",ConsoleColor.White),
+             ( " 1. Sine (sin)",ConsoleColor.DarkBlue),
+             ( " 2. Cosine (cos)",ConsoleColor.DarkCyan),
+             ( " 3. Tangent (tan)",ConsoleColor.DarkGreen),
+             ( " 4. Cotangent (cot)",ConsoleColor.DarkYellow),
+             ( " 5. Secant (sec)",ConsoleColor.DarkRed),
+             ( " 6. Cosecant (csc)",ConsoleColor.White),
+        };
+
+        foreach (var item in trigonometryMenuItems)
         {
             Utils.WriteColored(item.text, item.Color);
         }
