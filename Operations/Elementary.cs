@@ -48,7 +48,17 @@ class Elementary
         }
     }
 
-
+    /// <summary>
+    /// Displays the result of an elementary arithmetic operation in the console and returns the result.
+    /// </summary>
+    /// <remarks>The result is displayed in the console with a green checkmark and the corresponding
+    /// arithmetic expression.  This method does not perform any calculation; it only formats and outputs the provided
+    /// values.</remarks>
+    /// <param name="result">The computed result of the arithmetic operation to display.</param>
+    /// <param name="val1">The first operand used in the arithmetic operation.</param>
+    /// <param name="val2">The second operand used in the arithmetic operation.</param>
+    /// <param name="operationType">The type of arithmetic operation performed. Determines the symbol shown in the output.</param>
+    /// <returns>The value of <paramref name="result"/>.</returns>
     public static double ShowResult(double result, double val1, double val2, SymbolsOfElementary operationType)
     {
         string symbol = operationType switch
