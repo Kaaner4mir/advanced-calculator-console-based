@@ -10,6 +10,14 @@
 
 class Trigonometry
 {
+    /// <summary>
+    /// Displays a menu for trigonometric operations, prompts the user for input, and calculates the result of the
+    /// selected trigonometric function for a specified angle in degrees.
+    /// </summary>
+    /// <remarks>This method interacts with the user via the console to select a trigonometric operation (such
+    /// as sine, cosine, tangent, cotangent, secant, or cosecant), accepts an angle in degrees, computes the result, and
+    /// displays it. If the user provides invalid input or selects an unsupported operation, an error message is
+    /// shown.</remarks>
     public static void TrigonometricOperations()
     {
         try
@@ -46,11 +54,25 @@ class Trigonometry
         }
     }
 
+    /// <summary>
+    /// Converts an angle from degrees to radians.
+    /// </summary>
+    /// <param name="degree">The angle, in degrees, to convert.</param>
+    /// <returns>The equivalent angle measured in radians.</returns>
     public static double DegreeToRadian(double degree)
     {
         return degree * (Math.PI / 180);
     }
 
+    /// <summary>
+    /// Displays the result of a trigonometric operation for a specified angle in degrees.
+    /// </summary>
+    /// <remarks>The result is displayed in the console with a colored output, showing the operation symbol,
+    /// the angle in degrees, and the computed value.</remarks>
+    /// <param name="degree">The angle, in degrees, for which the trigonometric operation was performed.</param>
+    /// <param name="result">The computed result of the trigonometric operation.</param>
+    /// <param name="operationType">The type of trigonometric operation that was performed. Must be a valid value of <see
+    /// cref="SymbolsOfTrigonomtry"/>.</param>
     public static void ShowResult(double degree, double result, SymbolsOfTrigonomtry operationType)
     {
         string symbol = operationType switch
