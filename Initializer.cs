@@ -2,6 +2,7 @@
 
 class Initializer
 {
+
     static void Main()
     {
         Console.InputEncoding = Encoding.UTF8;
@@ -27,7 +28,10 @@ class Initializer
                     case 6: AdvancedMathematical.Root(SymbolsOfAdvancedMathematical.Root, (val1, val2) => Math.Pow(val2, 1.0 / val1)); break;
                     case 7: AdvancedMathematical.Factorial(SymbolsOfAdvancedMathematical.Factorial); break;
                     case 8: AdvancedMathematical.Modulo(SymbolsOfAdvancedMathematical.Modulo, (val1, val2) => val1 % val2); break;
-                    case 9: Trigonometry.TrigonometricOperations();break;
+                    case 9: Trigonometry.TrigonometricOperations(); break;
+                    case 10: Logarithm.LogarithmOperations(); break;
+                    case 11: Memory.MemoryOperations(); break;
+                    case 12: Exit.ExitOperation(); break;
                 }
                 Utils.WaitingScreen();
             }
