@@ -113,12 +113,6 @@ When the application starts, the main menu screen is displayed. You can select t
 ### Memory Operations
 ![Memory Operations](Images/memory.png)
 
-### Exit
-![Exit](Images/exit.png)
-
-### Project Structure
-![Folder Structure](Images/folder-structure.png)
-
 ---
 
 ## 📁 Project Structure
