@@ -102,10 +102,10 @@
         var memoryMenuItems = new (string text, ConsoleColor Color)[]
         {
              ( " 💾 Logarithm Operations", ConsoleColor.Magenta),
-             ( $" {new string('-',20)}",ConsoleColor.White),
-             ( " 1. LogBase10",ConsoleColor.DarkBlue),
+             ( $" {new string('-',25)}",ConsoleColor.White),
+             ( " 1. Log Base10",ConsoleColor.DarkBlue),
              ( " 2. Natural Logarithm",ConsoleColor.DarkCyan),
-             ( " 3. LogCustomBase",ConsoleColor.DarkGreen),
+             ( " 3. Log Custom Base",ConsoleColor.DarkGreen),
         };
 
         foreach (var item in memoryMenuItems)
