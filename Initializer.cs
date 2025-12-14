@@ -32,6 +32,7 @@ class Initializer
                     case 10: Logarithm.LogarithmOperations(); break;
                     case 11: Memory.MemoryOperations(); break;
                     case 12: Exit.ExitOperation(); break;
+                    default: Utils.WriteColored("\n ❓ You have made an invalid transaction!"); break;
                 }
                 Utils.WaitingScreen();
             }
